@@ -86,7 +86,7 @@ function spellNumberInWords(number) {
   // Loop through each large unit (thousands, millions, billions)
   while (i >= 0) {
     const divisor = Math.pow(1000, i + 1);
-    const extractedNumber = Math.floor(remainingAmount / divisor) % 1000;
+    const extractedNumber = Math.floor(remainingAmount / divisor);
 
     if (extractedNumber > 0) {
       const currentWord = numberUnits[i];
@@ -184,6 +184,8 @@ const testCases = {
   1111: "một nghìn một trăm mười một",
   1101: "một nghìn một trăm linh một",
   1010: "một nghìn không trăm mười",
+  9_999_999_999_999:
+    "chín nghìn chín trăm chín mươi chín tỷ chín trăm chín mươi chín triệu chín trăm chín mươi chín nghìn chín trăm chín mươi chín",
 };
 
 let passedCount = 0;
